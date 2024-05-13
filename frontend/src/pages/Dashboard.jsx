@@ -1,7 +1,7 @@
 
 import AppBar from "../components/Appbar"
 import {Balance} from "../components/Balance"
-import SubHeading from "../components/SubHeading"
+// import SubHeading from "../components/SubHeading"
 import Users from "../components/Users"
 
 export const Dashboard = () => {

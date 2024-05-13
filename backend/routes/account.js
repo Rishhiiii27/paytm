@@ -79,7 +79,7 @@ router.post("/transfer",authMidleware,async(req,res)=>{           //--good way o
 
     session.startTransaction();
 
-    const{amount,to}=req.body;
+    const{to,amount}=req.body;
     if (!amount || isNaN(amount) || amount <= 0) {
         return res.status(400).json({ error: "Invalid amount" });
     }
@@ -100,7 +100,7 @@ router.post("/transfer",authMidleware,async(req,res)=>{           //--good way o
         })
     }
 
-    await Account.updateOne({userId:req.userId} , {$inc: {balance:-amount } } ).session(session)
+    await Account.updateOne({userId:req.userId} , {$inc: {balance:(balance-amount) } } ).session(session)
     await Account.updateOne({userId:to}, {$inc:{balance: amount} } ).session(session)
 
     await session.commitTransaction();
