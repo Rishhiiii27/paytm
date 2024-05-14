@@ -84,6 +84,17 @@ const updateBody=zod.object({
     firstname:zod.string(),
     lastname:zod.string()
 })
+
+router.get("/user",authMidleware,async(req,res)=>{
+    console.log("dddd",req.userId)
+    const user= await User.findById(req.userId);
+    console.log("fff",user)
+    console.log("fff",user.username)
+    res.json({
+        msg:"user info",
+        user
+    })
+})
 router.put("/update",authMidleware,async(req,res)=>{
     const data=updateBody.safeParse(req.body);
     // console.log("sss"),console.log("dd",data)
