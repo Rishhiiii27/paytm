@@ -27,7 +27,7 @@ export const Balance = ({ value }) => {
         </svg>
       </div>
       <div>
-        <div className="font-semibold text-lg mb-1">Your Balance</div>
+        <div className="font-semibold text-lg mb-1">Your Balance is</div>
         <div className="font-bold text-xl">Rs {value}</div>
       </div>
     </div>
