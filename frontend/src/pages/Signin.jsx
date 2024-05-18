@@ -36,7 +36,7 @@ export default function Signup() {
   return (
     <div className="bg-gray-900 min-h-screen flex justify-center items-center overscroll-y-none ">
       <div className="max-w-md w-full bg-white rounded-lg shadow-md p-8 mt-5 mb-5 overscroll-none">
-        <div></div><Heading label={"Sign Up"}/>
+        <div></div><Heading label={"Sign In"}/>
         <SubHeading label={"Enter your Credentials"} />
         <form className="mt-6">
           <InputBox
